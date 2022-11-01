@@ -17,6 +17,10 @@ TEST_F(SoundexEncoding, PadsWithZeroesToEnsureThreeDigits){
   ASSERT_THAT(encoded,Eq("I000"));
 }
 
+TEST_F(SoundexEncoding, ReplacesConsonantsWithAppropriateDigits) {
+  ASSERT_THAT(soundex.encode("Ab"), Eq("A100"));
+}
+
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();
