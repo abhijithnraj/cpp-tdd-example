@@ -18,7 +18,9 @@ TEST_F(SoundexEncoding, PadsWithZeroesToEnsureThreeDigits){
 }
 
 TEST_F(SoundexEncoding, ReplacesConsonantsWithAppropriateDigits) {
-  ASSERT_THAT(soundex.encode("Ab"), Eq("A100"));
+  EXPECT_THAT(soundex.encode("Ab"), Eq("A100"));
+  EXPECT_THAT(soundex.encode("Ac"), Eq("A200"));
+
 }
 
 int main(int argc, char **argv) {
